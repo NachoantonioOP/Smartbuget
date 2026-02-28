@@ -1,0 +1,95 @@
+// 1. Abstracts
+@import 'abstracts/variables';
+
+// 2. Base
+@import 'base/reset'; 
+@import 'base/typography';
+
+// 3. Layout
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/footer';
+
+// 4. Components
+@import 'components/buttons';
+@import 'components/cards';
+
+
+
+$primary-color: #2c3e50;
+$secondary-color: #27ae60;
+$text-muted: #7f8c8d;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 576px) { @content; }
+  }
+}
+
+$primary-color: #007bff; 
+$success-green: #27ae60;
+$light-bg: #f8f9fa;
+$text-main: #333333;
+
+$font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media (max-width: 768px) { @content; }
+  }
+  @if $breakpoint == "mobile" {
+    @media (max-width: 576px) { @content; }
+  }
+}
+.hero {
+  background-color: $light-bg;
+  min-height: 80vh;
+  padding: 4rem 2rem;
+  @include flex-center; 
+  flex-direction: column;
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    color: $dark-blue;
+    margin-bottom: 1.5rem; 
+
+    @include respond-to("mobile") {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    max-width: 600px;
+    font-size: 1.25rem;
+    margin: 0 auto 2rem;
+  }
+}
+
+
+.card-feature {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease; 
+
+  &--highlight {
+    border: 2px solid $success-green;
+  }
+
+
+  &__icon {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+}}

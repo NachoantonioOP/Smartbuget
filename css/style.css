@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 20px;
+  background: rgb(178.5, 215.4, 255);
+}
+
+.features__card {
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
